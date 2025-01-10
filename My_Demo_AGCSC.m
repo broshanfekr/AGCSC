@@ -19,12 +19,12 @@ for dataindex = 1:numdatas   % different databases
     load(DataName)
 
     %---------------------------------------------------------
-    FEA = zeros(size(fea, 1), 32*32);
+    FEA = zeros(size(fea, 1), size(fea, 2)*size(fea, 3));
     for i = 1:size(fea, 1)
        tmp_img = fea(i, :, :, :);
        tmp_img = squeeze(tmp_img);
        tmp_img = rgb2gray(tmp_img);
-       tmp_img = reshape(double(tmp_img), 1, 32*32);
+       tmp_img = reshape(double(tmp_img), 1, size(fea, 2)*size(fea, 3));
        FEA(i, :) = tmp_img(1,:);
     end
     fea = FEA;
