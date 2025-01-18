@@ -77,6 +77,7 @@ while iter < maxIter
         Y1 = Y1 + mu*leq1;
         Y2 = Y2 + mu*leq2;
         mu = min(max_mu,mu*rho);
+        time_used = cputime - t0;
     end
 
 end

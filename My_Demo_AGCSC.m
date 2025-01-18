@@ -6,7 +6,7 @@ clear, clc
 addpath(genpath(pwd));
 % load data
 database = {'ORL','YALEB','COIL20','COIL40','Umist','MNIST'};
-database = {'cifar10'};
+database = {'stl10'};
 
 numdatas = length(database);
 
