@@ -67,9 +67,9 @@ for a=1:length(alpha)
 
         [acc, nmi, ari, f1, p, r] = compute_metrics(L, idx);
         results = [results; a, b, acc, nmi, ari];
-
+        fprintf('\nacc = %.2f, nmi = %.2f, ari = %.2f\n', acc*100, nmi*100, ari*100)
         save(breakpoint_path, 'results');
     end
 end
 
-fprintf('\nacc = %.2f, nmi = %.2f, ari = %.2f\n', acc*100, nmi*100, ari*100)
+%fprintf('\nacc = %.2f, nmi = %.2f, ari = %.2f\n', acc*100, nmi*100, ari*100)
