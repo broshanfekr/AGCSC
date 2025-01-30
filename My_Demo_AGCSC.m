@@ -87,8 +87,8 @@ for dataindex = 1:numdatas   % different databases
                 [F, C, time_used] =  agcsc_x(X, alpha(a), beta(b)); 
                 C1 = C;
                 [idx,~] = clu_ncut(C1,nbcluster);
-                acc_array1(a, b) = compacc(idx',L)
-                nmi_array1(a, b) = nmi(L, idx')
+                %acc_array1(a, b) = compacc(idx',L)
+                %nmi_array1(a, b) = nmi(L, idx')
                 Timecell{a,b} = time_used;
               
                 % save features and coefficient matrices
@@ -102,5 +102,5 @@ for dataindex = 1:numdatas   % different databases
     end
     % save accuracy and nmi
     filename = DataName + "_" + num2str(ProjectionType)+ "_"+ num2str(NormalizationType);
-    save(filename, "acc_array1", "nmi_array1", "Timecell")
+    %save(filename, "acc_array1", "nmi_array1", "Timecell")
 end
