@@ -6,7 +6,7 @@ clear, clc
 addpath(genpath(pwd));
 % load data
 database = {'ORL','YALEB','COIL20','COIL40','Umist','MNIST'};
-database = {'stl10'};
+database = {'cifar10'};
 
 numdatas = length(database);
 
@@ -71,6 +71,11 @@ for dataindex = 1:numdatas   % different databases
     for a=1:length(alpha)
         for b=1:length(beta)
 
+            if a < 7
+               fprintf('a is %d,  b is %d\n', a, b);
+               continue;
+            end
+            fprintf('a is %d,  b is %d\n', a, b);
             % save features and coefficient matrices
             tdir ="./Results/" + DataName;
             tfilename = num2str(a) + "_" + num2str(b) ;
