@@ -11,7 +11,7 @@ function [F, C, time_used] = agcsc_x(X, alpha, beta)
 
 t0 = cputime;
 %% parameters
-tol = 1e-7;
+tol = 1e-6;
 maxIter = 1000; %1e4;
 rho = 1.1;
 max_mu = 1e30;
