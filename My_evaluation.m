@@ -5,7 +5,7 @@ clear, clc
 addpath(genpath(pwd));
 % load data
 % database = {'ORL','YALEB','COIL20','COIL40','Umist','MNIST'};
-database = 'stl10';
+database = 'fashionmnist';
 
 numdatas = length(database);
 
@@ -51,9 +51,19 @@ else
     results = [];
 end
 
+k = 1;
+
 for a=1:length(alpha)
     for b=1:length(beta)
         % save features and coefficient matrices
+        if k <= size(results, 1)
+            if results(k, 1) == a && results(k, 2) == b
+                k = k + 1;
+                continue
+            end
+        end
+        k = k + 4;
+
         tdir ="./Results/" + DataName;
         tfilename = num2str(a) + "_" + num2str(b) ;
 
